@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Se debe construir una página con una única imagen, al hacerle click a la imagen se le debe agregar un borde rojo de 
+        2 pixeles, al hacerle click nuevamente se le debe quitar el borde. Requerimientos:
+    -->
+    <div class="container">
+    <img src="https://placedog.net/500" alt="#" onclick="
+    img = document.querySelector('img')                      //definimos img
+    if(img.style.border == '2px solid red'){                //nuestra condicion aquí tiene borde y queremos hacer que no tenga borde
+        img.style.border = '0'                             //le asignamos con la propiedad que quite el borde 
+    }
+    else{                                            //acá nuestra condicion indica que cuando no tiene borde queremos ponerle borde
+        img.style.border = '2px solid red';
+    }                                                   //Por lo tanto, si tiene borde se quita y si no tiene borde se pone.
+    ">
+    </div>
+    
+    
+
+    <!--
+        Se debe construir una página web que permita pedir hasta 10 stickers de los 3 tipos disponibles. Para eso deberá existir 
+        un input debajo de cada imagen donde el usuario podrá ingresar un número. En caso de que la suma de todos los stickers 
+        seleccionados sea menor o igual 10 se indicará en un párrafo nuevo la cantidad de stickers llevados. Ejemplo 
+        "llevas 5 stickers" en cualquier otro caso se mostrará un texto que dice "Llevas demasiados stickers"
+    -->
+
+    <h1>Puedes llevar hasta 10 stickers</h1>
+    <div class="container">
+        <img src="https://placedog.net/200/200" alt="#">    
+        <img src="https://placedog.net/200/200" alt="#">    
+        <img src="https://placedog.net/200/200" alt="#">    
+    </div>
+
+    <div class="container">
+        <input type="text" id="input-1">
+        <input type="text" id="input-2">
+        <input type="text" id="input-3">
+    </div>
+    
+    <div class="container-2">
+    <p id="par"></p>
+    <button onclick="
+        //variables
+
+        input1 = document.querySelector('#input-1').value
+        input2 = document.querySelector('#input-2').value
+        input3 = document.querySelector('#input-3').value
+        par = document.querySelector('#par')
+        sumaInputs = Number(input1) + Number(input2) + Number(input3)
+
+        if(sumaInputs <= 10) {
+            par.innerHTML= 'Llevas ' + sumaInputs + ' stikers'
+        }
+        else {
+            par.innerHTML = 'Llevas demasiados stickers'
+        }    
+    ">Total</button>
+    </div>
+
+    <!--
+        Se debe construir una página con 3 select y opciones con dígitos del 1 al 9, al hacer click a la opción ingresar se debe 
+        verificar que el password sea 911 y en ese caso mostrar debajo del botón ingresar, un párrafo con el contenido 
+        "password 1 correcto", en caso de que el password sea 714 se debe mostrar en el párrafo "password 2 es correcto", si ingresa
+         otro valor se debe mostrar "password incorrecto".
+    -->
+    
+    <h1>Ingresa Password</h1>
+    <div class="contenedor">
+        <select name="#" id="select1">        <!--Por ahora no ocuparemos "name" pero cuando tienes un formulario cada input sea un "select", un "input", un "text-area" tiene que tener un "name" para cuando esa informacion del formulario se envie tu puedas identificar que es.  -->
+            <option value="1">1</option>      <!--Los "options" tienen la propiedad "value" que es el valor real para el codigo cuando se seleccionas esa opcion en particular y fuera el valor que esta en el "tab"que es el valor que ve el usuario-->
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <select name="#" id="select2">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <select name="#" id="select3">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <button onclick="
+        select1 = document.querySelector('#select1').value
+        select2 = document.querySelector('#select2').value
+        select3 = document.querySelector('#select3').value
+        parrafo = document.querySelector('#parrafo')
+
+        if(select1 == 9 && select2 == 1 && select3 == 1){
+            parrafo.innerHTML = 'Password 1 correcto'
+        }
+        else if(select1 == 7 && select2 == 1 && select3 == 4){
+            parrafo.innerHTML = 'Password 2 es correcto'
+        }
+        else{
+            parrafo.innerHTML = 'Password incorrecto'
+        } 
+
+        ">Ingresar</button>
+        </div>
+        <p id="parrafo"></p>
+        
+
+</body>
+</html>

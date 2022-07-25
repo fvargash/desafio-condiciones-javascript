@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    margin-top: 40px;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+h1{
+    text-align: center;
+    margin: 40px;
+}
+
+.container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#parrafo {
+    text-align: center;
+    margin: 20px;
+}
