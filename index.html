@@ -113,11 +113,12 @@
         select2 = document.querySelector('#select2').value
         select3 = document.querySelector('#select3').value
         parrafo = document.querySelector('#parrafo')
+        valorFinal = select1 + select2 + select3 
 
-        if(select1 == 9 && select2 == 1 && select3 == 1){
+        if(valorFinal == '911'){
             parrafo.innerHTML = 'Password 1 correcto'
         }
-        else if(select1 == 7 && select2 == 1 && select3 == 4){
+        else if(valorFinal == 714){
             parrafo.innerHTML = 'Password 2 es correcto'
         }
         else{
