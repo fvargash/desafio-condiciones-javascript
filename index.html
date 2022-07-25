@@ -115,10 +115,10 @@
         parrafo = document.querySelector('#parrafo')
         valorFinal = select1 + select2 + select3 
 
-        if(valorFinal == '911'){
+        if(valorFinal === '911'){                                   //utilizamos el === en vez de == para evitar problemas de cohersion de tipo
             parrafo.innerHTML = 'Password 1 correcto'
         }
-        else if(valorFinal == 714){
+        else if(valorFinal === 714){
             parrafo.innerHTML = 'Password 2 es correcto'
         }
         else{
